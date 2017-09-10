@@ -27,7 +27,7 @@ def write_to_file(dictionary):
 		for key in k:
 			line_to_write = ''
 			if (PRINT_KEY):
-				line_to_write = str(key) + dictionary[key] + " "
+				line_to_write = str(key) + " " + dictionary[key] + " "
 			else:
 				line_to_write = dictionary[key] + " "
 			f.write(line_to_write)		# python will convert \n to os.linesep
@@ -39,6 +39,7 @@ time_dict = {}
 
 # Read file using CSV reader
 f = open(sys.argv[1], 'rt')
+print("Converting " + sys.argv[1])
 try:
     reader = csv.reader(f)
     for row in reader:
